@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Marastoni</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    </head>
+<body>
+    <div class="container">
+        <!-- Spazio per l'immagine centrale -->
+        <img src="immagine_centerale.png" alt="Immagine Centrale" id="centerImage">
+
+        <!-- Cards dei link sotto l'immagine centrale -->
+        <div class="cards-container">
+            <div class="card">
+                <a href="smm.html">Social Media Management</a>
+            </div>
+            <div class="card">
+                <a href="software.html">Software</a>
+            </div>
+            <div class="card">
+                <a href="hardware.html">Hardware</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenitore per social media e privacy policy -->
+    <div class="social-privacy-container">
+        <!-- Icone dei social media -->
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/luca-marastoni-387329304/" target="_blank">
+                <img src="linkedin_icon.png" alt="Linkedin" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/marastoni.luca/" target="_blank">
+                <img src="instagram_icon.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://wa.me/3486646762" target="_blank">
+                <img src="whatsapp_icon.png" alt="Whatsapp" class="social-icon">
+            </a>
+        </div>
+
+        <!-- Link Privacy Policy -->
+        <div class="privacy-link">
+            <a href="#" id="privacyBtn">Privacy Policy</a>
+        </div>
+    </div>
+
+    <!-- Overlay semi-trasparente per chiudere la card cliccando fuori -->
+    <div id="overlay"></div>
+
+    <!-- Card della Privacy Policy nascosta inizialmente -->
+    <div id="privacyCard" class="privacy-card">
+        <div class="privacy-content">
+            <p><strong>Privacy Policy</strong></p>
+            <p>Questo sito rispetta la privacy degli utenti e non raccoglie dati personali. Non utilizzo strumenti di analisi, annunci pubblicitari o cookie di tracciamento.</p>
+            <p>**Servizi di Terze Parti**</p>
+            <p>Il sito include link ai miei profili social. Cliccando su questi link, verrai reindirizzato a piattaforme esterne che potrebbero raccogliere dati. Consulta le loro privacy policy per maggiori dettagli.</p>
+            <button id="closePrivacyCard">Chiudi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
