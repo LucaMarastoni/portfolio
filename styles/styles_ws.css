@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.content {
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+
+/* Evita scroll laterale */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Stile per le cards */
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  width: 45%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  margin: 20px 0 10px;
+  font-size: 1.5em;
+}
+
+.card p {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.card a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card a:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Stile per il logo nella card */
+.logo-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  max-width: 120px;
+  height: auto;
+  border-radius: 5px; /* Opzionale, per arrotondare gli angoli del logo */
+}
+
+/* Stile per il link che torna alla homepage */
+a[href="index.html"] {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+a[href="index.html"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* MEDIA QUERIES per schermi piccoli */
+@media only screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
