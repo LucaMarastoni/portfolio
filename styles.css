@@ -22,6 +22,12 @@ body {
     position: relative;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+
 #centerImage {
     width: 500px; /* Dimensione dell'immagine centrale */
     height: 500px;
@@ -38,7 +44,7 @@ body {
 
 .card {
     width: 180px;
-    height: 100px;
+    height: 70px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;

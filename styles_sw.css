@@ -28,6 +28,13 @@ a {
     transition: color 0.3s ease;
 }
 
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+
 a:hover {
     color: #0056b3;
     text-decoration: underline;

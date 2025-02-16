@@ -86,3 +86,9 @@ a[href="index.html"]:hover {
         max-width: 300px;
     }
 }
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  

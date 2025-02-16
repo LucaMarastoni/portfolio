@@ -23,6 +23,13 @@ h1 {
     font-size: 2em;
 }
 
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+
 .image-section {
     display: flex;
     justify-content: space-between;
