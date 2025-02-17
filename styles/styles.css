@@ -14,12 +14,16 @@ body {
 .container {
     text-align: center;
     width: 100%;
-    height: 100vh; /* Altezza completa della pagina */
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Mantiene il layout dall'alto */
+    justify-content: flex-start;
     align-items: center;
     position: relative;
+    background-image: url('images/immagine_centrale.png'); /* Imposta l'immagine di sfondo */
+    background-size: cover; /* Adatta l'immagine */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Evita la ripetizione */
 }
 
 html, body {
