@@ -14,8 +14,7 @@ body {
 html, body {
     overflow-x: hidden;
     width: 100%;
-  }
-  
+}
 
 h1 {
     text-align: center;
@@ -47,6 +46,7 @@ a:hover {
     text-align: center;
     padding: 20px;
     animation: slideUp 0.8s ease;
+    margin: 0 auto; /* Centra la card all'interno della pagina */
 }
 
 .card img {
@@ -54,6 +54,8 @@ a:hover {
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
+    display: block;
+    margin: 0 auto; /* Centra l'immagine nella card */
 }
 
 .card p {
@@ -82,7 +84,10 @@ a[href="index.html"]:hover {
 /* MEDIA QUERIES per schermi piccoli */
 @media only screen and (max-width: 768px) {
     .card img {
-        width: 100%;
-        height: auto;
+        width: 100%;   /* L'immagine si adatta alla larghezza disponibile */
+        height: auto;  /* Mantiene le proporzioni */
+    }
+    .card {
+        width: 80%;
     }
 }

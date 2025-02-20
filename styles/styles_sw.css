@@ -10,18 +10,18 @@
 /* Impostazioni generali per html e body */
 html, body {
     width: 100%;
-    min-height: 100vh;      /* consente di estendersi almeno alla finestra */
-    overflow-x: hidden;     /* evita lo scroll orizzontale */
+    min-height: 100vh;
+    overflow-x: hidden;
     font-family: 'Noto Sans', sans-serif;
     background-color: #f4f4f4;
 }
 
 /* Contenitore principale che centra orizzontalmente i contenuti */
 .container {
-    max-width: 600px;       /* larghezza massima del contenitore */
-    margin: 0 auto;         /* centra orizzontalmente */
-    padding: 20px;          /* un po' di spazio interno */
-    text-align: center;     /* centra il testo e gli elementi inline-block */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
 
 /* Titolo */
@@ -34,7 +34,7 @@ h1 {
 
 /* Link generici */
 a {
-    display: inline-block;  /* permette margini verticali e hover più consistenti */
+    display: inline-block;
     margin-top: 20px;
     color: #007bff;
     text-decoration: none;
@@ -51,20 +51,61 @@ a:hover {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;         /* la card è già in un container centrato, ma non guasta */
+    margin: 0 auto;
     padding: 20px;
     animation: slideUp 0.8s ease;
-    text-align: center;     /* testo centrato all’interno */
+    text-align: center;
 }
 
-/* Immagine responsiva all’interno della card */
-.card img {
-    display: block;         /* evita spazi bianchi inline */
-    max-width: 100%;        /* non supera la larghezza della card */
-    height: auto;           /* mantiene proporzioni */
-    margin: 0 auto;         /* se vuoi proprio centrarla */
+/* Carousel container */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Carousel images container */
+.carousel-images {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Carousel images */
+.carousel-images img {
+    width: 100%;
+    flex-shrink: 0;
     border-radius: 10px;
-    object-fit: cover;      /* se vuoi “tagliare” l’immagine in base al box */
+    object-fit: cover;
+}
+
+/* Pulsanti aggiornati del carosello */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+    opacity: 0.8;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background-color: #0056b3;
+    opacity: 1;
 }
 
 /* Testo nella card */
@@ -93,12 +134,12 @@ a[href="index.html"]:hover {
 /* MEDIA QUERIES per schermi piccoli */
 @media only screen and (max-width: 768px) {
     h1 {
-        font-size: 2em;     /* riduci un po’ il titolo su mobile */
+        font-size: 2em;
     }
     a {
-        font-size: 1.1em;   /* testo leggermente più piccolo */
+        font-size: 1.1em;
     }
     .card {
-        padding: 15px;      /* meno padding su mobile */
+        padding: 15px;
     }
 }
