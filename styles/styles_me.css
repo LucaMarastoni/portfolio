@@ -8,11 +8,11 @@ html, body {
     overflow-x: hidden;
     font-family: 'Noto Sans', sans-serif;
     background-color: #f4f4f4;
-    display: flex;                /* Per centrare verticalmente e orizzontalmente */
+    display: flex;                
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;            /* Altezza minima a tutta la finestra */
+    min-height: 100vh;
 }
 
 /* Card principale */
@@ -24,10 +24,16 @@ html, body {
     text-align: center;
     padding: 20px;
     animation: slideUp 0.8s ease;
-    margin: 20px; /* Un po' di margine se necessario */
+    margin: 20px;
 }
 
-/* Immagine del profilo */
+/* Contenitore per la foto e le sprinkle pixel */
+.profile-pic-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Immagine del profilo con bordo */
 .profile-pic {
     width: 200px;
     height: 200px;
@@ -37,17 +43,21 @@ html, body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 4px solid #007BFF;
 }
 
-/* Titolo (nome) */
+/* Titolo (nome) in stile pixel art */
 h1 {
     margin-bottom: 20px;
     font-size: 2em;
     color: #333;
     animation: fadeIn 1s ease-in-out;
 }
+.pixel-art {
+    font-family: 'Press Start 2P', cursive;
+}
 
-/* Paragrafo di descrizione */
+/* Paragrafo di descrizione abbreviato */
 .card p {
     font-size: 16px;
     color: #333;
@@ -55,21 +65,146 @@ h1 {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Pulsante di ritorno */
-.card a[href="index.html"] {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
+/* Container per l'elenco con linea verticale animata */
+.experience-container {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+.experience-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
     background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1s ease, opacity 1s ease;
+}
+.experience-container.visible::before {
+    opacity: 1;
+    transform: scaleY(1);
 }
 
-.card a[href="index.html"]:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+/* Elenco delle esperienze */
+.experience-list {
+    text-align: left;
+    list-style: disc;
+}
+.experience-list li {
+    margin-bottom: 10px;
+}
+
+/* Barra di avanzamento per il livello di inglese */
+.english-level {
+    margin-top: 20px;
+    text-align: left;
+}
+.english-level p {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 20px;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+/* Titolo sopra le icone dei software */
+.work-title {
+    margin-top: 30px;
+    font-size: 1.5em;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Sezione per i loghi delle tecnologie */
+.tech-section hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px auto;
+    width: 80%;
+}
+.tech-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+.tech-logos img {
+    width: 50px;
+    height: auto;
+}
+
+/* Animazioni per la sprinkle pixel */
+.sprinkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.sprinkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #007BFF;
+    border-radius: 2px;
+    opacity: 0;
+    animation: sprinkleOut 2s forwards;
+}
+.sprinkle:nth-child(1) {
+  top: 50%;
+  left: 50%;
+  --final-transform: translate(-40px, -20px);
+  animation-delay: 0s;
+}
+.sprinkle:nth-child(2) {
+  top: 50%;
+  left: 50%;
+  --final-transform: translate(30px, -30px);
+  animation-delay: 0.2s;
+}
+.sprinkle:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  --final-transform: translate(-25px, 40px);
+  animation-delay: 0.4s;
+}
+.sprinkle:nth-child(4) {
+  top: 50%;
+  left: 50%;
+  --final-transform: translate(35px, 25px);
+  animation-delay: 0.6s;
+}
+.sprinkle:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  --final-transform: translate(-30px, -35px);
+  animation-delay: 0.8s;
+}
+@keyframes sprinkleOut {
+  0% {
+    opacity: 1;
+    transform: translate(0,0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: var(--final-transform) scale(1.5);
+  }
 }
 
 /* Effetti di animazione (slideUp, fadeIn) */
@@ -83,7 +218,6 @@ h1 {
         opacity: 1;
     }
 }
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -93,27 +227,20 @@ h1 {
     }
 }
 
-/* Sezione per i loghi delle tecnologie */
-.tech-section hr {
-    border: none;
-    height: 1px;
-    background-color: #ddd;
-    margin: 20px auto;
-    width: 80%;
+/* Pulsante di ritorno */
+.card a[href="index.html"] {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
-.tech-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 10px 0;
-}
-
-.tech-logos img {
-    width: 50px;
-    height: auto;
+.card a[href="index.html"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Media query per schermi piccoli */
@@ -122,12 +249,53 @@ h1 {
         width: 150px;
         height: 150px;
     }
-
     h1 {
         font-size: 1.8em;
     }
-
     .card p {
         font-size: 14px;
     }
+}
+
+.education-container, .work-container {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+/* Effetto linea verticale animata */
+.education-container::before, .work-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #007BFF;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1s ease, opacity 1s ease;
+}
+.education-container.visible::before, .work-container.visible::before {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* Liste per studi e lavoro */
+.education-list, .work-list {
+    text-align: left;
+    list-style: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+.education-list li, .work-list li {
+    margin-bottom: 10px;
+}
+
+/* Titoli per le sezioni */
+.education-container h3, .work-container h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.2em;
 }
