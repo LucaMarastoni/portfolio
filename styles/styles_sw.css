@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
-/* Azzera margini e padding di base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Impostazioni generali per html e body */
 html, body {
     width: 100%;
     min-height: 100vh;
@@ -16,7 +14,6 @@ html, body {
     background-color: #f4f4f4;
 }
 
-/* Contenitore principale che centra orizzontalmente i contenuti */
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -24,7 +21,6 @@ html, body {
     text-align: center;
 }
 
-/* Titolo */
 h1 {
     margin-bottom: 30px;
     font-size: 2.5em;
@@ -32,7 +28,6 @@ h1 {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Link generici */
 a {
     display: inline-block;
     margin-top: 20px;
@@ -46,7 +41,6 @@ a:hover {
     color: #0056b3;
 }
 
-/* Card principale */
 .card {
     background-color: #fff;
     border-radius: 10px;
@@ -57,7 +51,6 @@ a:hover {
     text-align: center;
 }
 
-/* Carousel container */
 .carousel {
     position: relative;
     overflow: hidden;
@@ -65,13 +58,11 @@ a:hover {
     margin-bottom: 20px;
 }
 
-/* Carousel images container */
 .carousel-images {
     display: flex;
     transition: transform 0.4s ease-in-out;
 }
 
-/* Carousel images */
 .carousel-images img {
     width: 100%;
     flex-shrink: 0;
@@ -79,7 +70,6 @@ a:hover {
     object-fit: cover;
 }
 
-/* Pulsanti aggiornati del carosello */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -108,7 +98,6 @@ a:hover {
     opacity: 1;
 }
 
-/* Testo nella card */
 .card p {
     font-size: 16px;
     color: #333;
@@ -116,7 +105,6 @@ a:hover {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Pulsante di ritorno a index.html */
 a[href="index.html"] {
     margin-top: 40px;
     padding: 10px 20px;
@@ -131,7 +119,6 @@ a[href="index.html"]:hover {
     transform: scale(1.05);
 }
 
-/* MEDIA QUERIES per schermi piccoli */
 @media only screen and (max-width: 768px) {
     h1 {
         font-size: 2em;

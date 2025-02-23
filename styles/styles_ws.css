@@ -23,13 +23,11 @@ h1 {
   font-size: 2em;
 }
 
-/* Evita scroll laterale */
 html, body {
   overflow-x: hidden;
   width: 100%;
 }
 
-/* Stile per le cards */
 .cards {
   display: flex;
   justify-content: space-between;
@@ -50,7 +48,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 350px; /* Aumenta l'altezza minima */
+    min-height: 350px; 
   }
   
   
@@ -85,21 +83,19 @@ html, body {
   transform: scale(1.05);
 }
 
-/* Stile per il logo nella card */
 .logo-container {
   width: 100%;
   margin-bottom: 20px;
 }
 
 .logo-container img {
-    width: 120px; /* Regola la dimensione a piacere */
+    width: 120px; 
     height: 120px;
-    object-fit: contain; /* Evita distorsioni */
+    object-fit: contain; 
     border-radius: 5px;
   }
   
 
-/* Stile per il link che torna alla homepage */
 a[href="index.html"] {
   display: inline-block;
   margin-bottom: 20px;
@@ -116,7 +112,6 @@ a[href="index.html"]:hover {
   transform: scale(1.05);
 }
 
-/* MEDIA QUERIES per schermi piccoli */
 @media only screen and (max-width: 768px) {
   .cards {
     flex-direction: column;

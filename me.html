@@ -4,18 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Profilo Personale</title>
-  <!-- Collega il file CSS -->
   <link rel="stylesheet" href="styles/styles_me.css"/>
-  <!-- Favicon (opzionale) -->
   <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon" />
   <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon" />
-  <!-- Font per lo stile pixel art nel nome -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <div class="card">
-    <!-- Contenitore per la foto e le sprinkle pixel -->
     <div class="profile-pic-container">
       <img src="images/me.jpg" alt="Foto personale" class="profile-pic"/>
       <div class="sprinkles">
@@ -35,7 +31,6 @@
       Ciao! Sono uno studente dei ITS aspirante System Administrator, da sempre incuriosito dalle nuove tecnologie. Mi reputo una persona solare, precisa e indipendente, con una forte predisposizione per l'organizzazione ed il lavoro di squadra.
     </p>
     
-    <!-- Lista del percorso di studi -->
     <div class="education-container">
       <h3>Percorso di Studi</h3>
       <ul class="education-list">
@@ -47,7 +42,6 @@
     </div>
     <br>
 
-    <!-- Lista del percorso lavorativo -->
     <div class="work-container">
       <h3>Percorso Lavorativo</h3>
       <ul class="work-list">
@@ -59,7 +53,6 @@
 
     <br>
     
-    <!-- Barra di avanzamento per il livello di inglese -->
     <div class="english-level">
       <p>Livello Inglese:</p>
       <div class="progress-container">
@@ -67,10 +60,8 @@
       </div>
     </div>
     
-    <!-- Titolo sopra le icone -->
     <h2 class="work-title">Con cosa lavoro</h2>
     
-    <!-- Sezione per i loghi delle tecnologie -->
     <div class="tech-section">
       <hr>
       <div class="tech-logos">
@@ -88,18 +79,14 @@
         <img src="images/logo_proxmox.png" alt="Proxmox">
         <img src="images/logo_aws.png" alt="AWS">
         <img src="images/logo_wireshark.png" alt="Wireshark">
-        <img src="images/logo_git.png" alt="Git">
-        <img src="images/logo_docker.png" alt="Docker">
         <img src="images/logo_windows_server.png" alt="Windows Server">
         <img src="images/logo_figma.png" alt="Figma">
-        <!-- Aggiungi altri loghi se necessario -->
       </div>
     </div>
     
     <a href="index.html">Torna alla pagina principale</a>
   </div>
 
-  <!-- Script per attivare l'animazione della linea verticale al momento dello scroll -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var containers = document.querySelectorAll('.education-container, .work-container');

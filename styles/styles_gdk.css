@@ -69,7 +69,6 @@ a[href="index.html"]:hover {
     transform: scale(1.05);
 }
 
-/* MEDIA QUERIES per schermi piccoli */
 @media only screen and (max-width: 768px) {
     .description-section {
         flex-direction: column;

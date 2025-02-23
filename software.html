@@ -38,27 +38,22 @@
   </div>
 
   <script>
-    // Seleziona gli elementi del carousel
     const carouselImages = document.querySelector('.carousel-images');
     let images = document.querySelectorAll('.carousel-images img');
     const nextBtn = document.querySelector('.carousel-btn.next');
     const prevBtn = document.querySelector('.carousel-btn.prev');
 
-    // Clona il primo e l'ultimo elemento per abilitare il loop
     const firstClone = images[0].cloneNode(true);
     const lastClone = images[images.length - 1].cloneNode(true);
     carouselImages.appendChild(firstClone);
     carouselImages.insertBefore(lastClone, images[0]);
 
-    // Aggiorna la lista delle immagini dopo la clonazione
     images = document.querySelectorAll('.carousel-images img');
 
-    // Imposta il contatore e la dimensione della slide
     let counter = 1;
     let size = images[0].clientWidth;
     carouselImages.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
-    // Funzione per passare alla slide successiva
     function nextSlide() {
       if (counter >= images.length - 1) return;
       carouselImages.style.transition = "transform 0.4s ease-in-out";
@@ -66,7 +61,6 @@
       carouselImages.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
 
-    // Funzione per tornare alla slide precedente
     function prevSlide() {
       if (counter <= 0) return;
       carouselImages.style.transition = "transform 0.4s ease-in-out";
@@ -74,7 +68,6 @@
       carouselImages.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
 
-    // Aggiungi event listener per i pulsanti e resetta l'intervallo al click
     nextBtn.addEventListener('click', () => {
       nextSlide();
       resetInterval();
@@ -85,16 +78,13 @@
       resetInterval();
     });
 
-    // Imposta lo scorrimento automatico ogni 3 secondi
     let autoScroll = setInterval(nextSlide, 3000);
 
-    // Funzione per resettare l'intervallo di scorrimento automatico
     function resetInterval() {
       clearInterval(autoScroll);
       autoScroll = setInterval(nextSlide, 3000);
     }
 
-    // Gestisci il loop del carousel al termine della transizione
     carouselImages.addEventListener('transitionend', () => {
       if (counter === images.length - 1) {
         carouselImages.style.transition = "none";
@@ -108,7 +98,6 @@
       }
     });
 
-    // Aggiorna la dimensione della slide in caso di resize della finestra
     window.addEventListener('resize', () => {
       size = images[0].clientWidth;
       carouselImages.style.transition = "none";

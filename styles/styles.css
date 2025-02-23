@@ -1,4 +1,3 @@
-/* Stile generale */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 body {
     font-family: 'Noto Sans', sans-serif;
@@ -20,10 +19,10 @@ body {
     justify-content: flex-start;
     align-items: center;
     position: relative;
-    background-image: url('images/immagine_centrale.png'); /* Imposta l'immagine di sfondo */
-    background-size: cover; /* Adatta l'immagine */
-    background-position: center; /* Centra l'immagine */
-    background-repeat: no-repeat; /* Evita la ripetizione */
+    background-image: url('images/immagine_centrale.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 html, body {
@@ -33,16 +32,16 @@ html, body {
   
 
 #centerImage {
-    width: 500px; /* Dimensione dell'immagine centrale */
+    width: 500px; 
     height: 500px;
-    margin-top: -95px; /* Margine ridotto per spostare l'immagine più in alto */
+    margin-top: -95px; 
     margin-bottom: -150px;
 }
 
 .cards-container {
     display: flex;
-    justify-content: center; /* Allinea le cards al centro */
-    gap: 20px; /* Spazio tra le cards */
+    justify-content: center; 
+    gap: 20px;
     margin-top: 50px;
 }
 
@@ -77,10 +76,9 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Arrotonda anche il link */
+    border-radius: 10px; 
 }
 
-/* Contenitore per social e privacy */
 .social-privacy-container {
     display: flex;
     justify-content: space-between;
@@ -89,7 +87,6 @@ html, body {
     margin: 20px 0;
 }
 
-/* Stile per le icone dei social media */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -107,7 +104,6 @@ html, body {
     transform: scale(1.1);
 }
 
-/* Stile per il link alla privacy policy */
 .privacy-link {
     margin-right: 20px;
 }
@@ -123,7 +119,6 @@ html, body {
     color: #007BFF;
 }
 
-/* Card della Privacy Policy con bordi smussati e animazione */
 .privacy-card {
     position: fixed;
     top: 50%;
@@ -134,40 +129,36 @@ html, body {
     padding: 20px;
     width: 80%;
     max-width: 400px;
-    border-radius: 10px; /* Bordi smussati */
+    border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1001;
     opacity: 0;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-/* Overlay per l'effetto di sfondo scuro */
 #overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente */
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1000;
     display: none;
 }
 
-/* Mostra la card con l'animazione di ingresso */
 .show-card {
     display: block;
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1); /* Zoom in */
+    transform: translate(-50%, -50%) scale(1); 
 }
 
-/* Nasconde la card con l'animazione di uscita */
 .hide-card {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0); /* Zoom out */
+    transform: translate(-50%, -50%) scale(0); 
     transition: transform 0.3s ease-in, opacity 0.3s ease-in;
 }
 
-/* Contenuto della card */
 .privacy-content p {
     font-size: 14px;
     margin-bottom: 15px;
@@ -186,47 +177,41 @@ html, body {
     background-color: #0056b3;
 }
 
-/* MEDIA QUERIES per schermi piccoli (telefoni e tablet) */
 @media only screen and (max-width: 768px) {
     .container {
         padding: 10px;
     }
 
-    /* Rimpicciolisci l'immagine centrale */
     #centerImage {
-        width: 80%;  /* Usa percentuali per una migliore adattabilità */
-        height: auto; /* Mantieni proporzioni */
+        width: 80%;  
+        height: auto; 
     }
 
-    /* Cards in colonna sui telefoni */
     .cards-container {
-        flex-direction: column; /* Cambia layout in colonna */
+        flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
     .card {
-        width: 90%; /* Rendi le cards più larghe e flessibili */
+        width: 90%;
     }
 
-    /* Icone dei social media più piccole */
     .social-icons .social-icon {
         width: 30px;
         height: 30px;
     }
 
-    /* La card della privacy policy si adatta meglio ai piccoli schermi */
     .privacy-card {
         width: 90%;
     }
 
-    /* Riduci la dimensione del testo per i telefoni */
     body {
-        font-size: 16px; /* Dimensione del testo più piccola */
+        font-size: 16px; 
     }
 
     .card a {
-        font-size: 16px; /* Riduci la dimensione del testo nelle cards */
+        font-size: 16px; 
     }
 }
 
